@@ -12,11 +12,12 @@ const Option = ({ option, selectOption, answer, hide }) => {
       onClick={() => selectOption()}
       className={`
       option
-        ${quizState.answerSelected && option === answer ? "correct" : ""} ${
-        quizState.answerSelected && option !== answer ? "wrong" : ""
-      }
-        ${hide ? "hide" : ""}
-        `}
+      ${quizState.answerSelected && option === answer ? "correct" : ""}
+      ${quizState.answerSelected && option !== answer ? "wrong" : ""}
+      ${quizState.answerSelected && quizState.answerSelected !== option && option !== answer ? "inactive" : ""}
+      ${hide ? "hide" : ""}
+      ${quizState.answerSelected ? "disable-hover" : ""}
+      `}
     >
       <p>{option}</p>
     </div>
